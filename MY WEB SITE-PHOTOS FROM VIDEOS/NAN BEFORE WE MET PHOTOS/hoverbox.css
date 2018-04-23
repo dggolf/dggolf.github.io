@@ -1,0 +1,33 @@
+
+
+body
+{
+	background: #fff;
+	color: #777;
+	margin: 0 auto;
+	padding: 50px;
+	position: relative;
+	width: 100%;
+}
+
+
+/* =Hoverbox Code
+----------------------------------------------------------------------*/
+
+
+
+.hoverbox img { float: left;max-width: 20%;  display: block;
+                   border: 5px solid white;}
+
+
+.hoverbox img:hover {
+    position:relative;
+    max-width: 300px;
+    height: auto;
+    display:block;
+    z-index: 1;
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large,
+                               it will go outside of the viewport)
+ 
+} 
+
