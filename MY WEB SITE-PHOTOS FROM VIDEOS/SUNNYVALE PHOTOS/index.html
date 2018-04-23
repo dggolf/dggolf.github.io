@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>PHOTOS FROM VIDEOS</title>
+        <link href="hoverbox.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript">
+	//http://stackoverflow.com/questions/805107/creating-multiline-strings-in-javascript
+	function mlString(f) {
+		return f.toString().
+			replace(/^[^\/]+\/\*!?/, '').
+			replace(/\*\/[^\/]+$/, '');
+	}
+
+	function run_onload() {
+		console.log("Running tests...");
+		var filenames = g_FOLDER_CONTENTS.match(/\S+/g);
+		var fragment = document.createDocumentFragment();
+		for (var i = 0; i < filenames.length; ++i) {
+			var extension = filenames[i].substring(filenames[i].length-3);
+			if (extension == "jpg") {
+				var image = document.createElement("img");
+				image.src = "images/" + filenames[i];
+				image.height = "160";
+                                fragment.appendChild(image);
+			}
+		}
+		document.getElementById("image_div").appendChild(fragment);
+	}
+	</script>
+
+
+
+	<script type="text/javascript" src="folder_contents.js"></script>
+</head>
+<body onload="run_onload()" style="background-color:black;color:white;text-align:center">
+	
+	<div id="image_div" class="hoverbox"></div>
+
+
+</body>
+</html>
